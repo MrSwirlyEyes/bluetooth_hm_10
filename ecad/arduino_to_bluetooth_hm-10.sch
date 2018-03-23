@@ -275,45 +275,45 @@
 <wire x1="-15.24" y1="-27.94" x2="15.24" y2="-27.94" width="0.254" layer="94"/>
 <wire x1="15.24" y1="-27.94" x2="15.24" y2="27.94" width="0.254" layer="94"/>
 <wire x1="15.24" y1="27.94" x2="-15.24" y2="27.94" width="0.254" layer="94"/>
-<pin name="A0" x="-20.32" y="5.08" length="middle"/>
-<pin name="A1" x="-20.32" y="2.54" length="middle"/>
-<pin name="A2" x="-20.32" y="0" length="middle"/>
-<pin name="A3" x="-20.32" y="-2.54" length="middle"/>
-<pin name="A4" x="-20.32" y="-5.08" length="middle"/>
-<pin name="A5" x="-20.32" y="-7.62" length="middle"/>
-<pin name="IOREF" x="-20.32" y="25.4" length="middle"/>
-<pin name="!RESET!@1" x="-20.32" y="22.86" length="middle"/>
-<pin name="VIN" x="-20.32" y="15.24" length="middle"/>
-<pin name="5V" x="-20.32" y="20.32" length="middle"/>
-<pin name="3.3V" x="-20.32" y="17.78" length="middle"/>
-<pin name="AREF" x="20.32" y="20.32" length="middle" rot="R180"/>
-<pin name="GND@0" x="-20.32" y="12.7" length="middle"/>
-<pin name="GND@1" x="-20.32" y="10.16" length="middle"/>
-<pin name="GND@2" x="20.32" y="17.78" length="middle" rot="R180"/>
-<pin name="VCC" x="-20.32" y="-12.7" length="middle"/>
-<pin name="MISO" x="-20.32" y="-15.24" length="middle"/>
-<pin name="MOSI" x="-20.32" y="-17.78" length="middle"/>
-<pin name="SCK" x="-20.32" y="-20.32" length="middle"/>
-<pin name="!RESET!@2" x="-20.32" y="-22.86" length="middle"/>
-<pin name="GND" x="-20.32" y="-25.4" length="middle"/>
-<pin name="RX-&gt;D0" x="20.32" y="-20.32" length="middle" rot="R180"/>
-<pin name="TX-&gt;D1" x="20.32" y="-17.78" length="middle" rot="R180"/>
-<pin name="D2" x="20.32" y="-15.24" length="middle" rot="R180"/>
-<pin name="~D3" x="20.32" y="-12.7" length="middle" rot="R180"/>
-<pin name="D4" x="20.32" y="-10.16" length="middle" rot="R180"/>
-<pin name="~D5" x="20.32" y="-7.62" length="middle" rot="R180"/>
-<pin name="~D6" x="20.32" y="-5.08" length="middle" rot="R180"/>
-<pin name="D7" x="20.32" y="-2.54" length="middle" rot="R180"/>
-<pin name="D8" x="20.32" y="2.54" length="middle" rot="R180"/>
-<pin name="~D9" x="20.32" y="5.08" length="middle" rot="R180"/>
-<pin name="~D10" x="20.32" y="7.62" length="middle" rot="R180"/>
-<pin name="~D11" x="20.32" y="10.16" length="middle" rot="R180"/>
-<pin name="D12" x="20.32" y="12.7" length="middle" rot="R180"/>
-<pin name="D13" x="20.32" y="15.24" length="middle" rot="R180"/>
-<pin name="SDA" x="20.32" y="22.86" length="middle" rot="R180"/>
-<pin name="SCL" x="20.32" y="25.4" length="middle" rot="R180"/>
-<text x="0" y="33.02" size="1.27" layer="95" font="vector" ratio="10" align="center">&gt;NAME</text>
-<text x="0" y="30.48" size="1.27" layer="96" font="vector" ratio="10" align="center">&gt;VALUE</text>
+<pin name="A0" x="-17.78" y="5.08" visible="pin" length="short"/>
+<pin name="A1" x="-17.78" y="2.54" visible="pin" length="short"/>
+<pin name="A2" x="-17.78" y="0" visible="pin" length="short"/>
+<pin name="A3" x="-17.78" y="-2.54" visible="pin" length="short"/>
+<pin name="A4" x="-17.78" y="-5.08" visible="pin" length="short"/>
+<pin name="A5" x="-17.78" y="-7.62" visible="pin" length="short"/>
+<pin name="IOREF" x="-17.78" y="25.4" visible="pin" length="short"/>
+<pin name="!RESET!@1" x="-17.78" y="22.86" visible="pin" length="short"/>
+<pin name="VIN" x="-17.78" y="15.24" visible="pin" length="short"/>
+<pin name="5V" x="-17.78" y="20.32" visible="pin" length="short"/>
+<pin name="3.3V" x="-17.78" y="17.78" visible="pin" length="short"/>
+<pin name="AREF" x="17.78" y="20.32" visible="pin" length="short" rot="R180"/>
+<pin name="GND@0" x="-17.78" y="12.7" visible="pin" length="short"/>
+<pin name="GND@1" x="-17.78" y="10.16" visible="pin" length="short"/>
+<pin name="GND@2" x="17.78" y="17.78" visible="pin" length="short" rot="R180"/>
+<pin name="VCC" x="-17.78" y="-12.7" visible="pin" length="short"/>
+<pin name="MISO" x="-17.78" y="-15.24" visible="pin" length="short"/>
+<pin name="MOSI" x="-17.78" y="-17.78" visible="pin" length="short"/>
+<pin name="SCK" x="-17.78" y="-20.32" visible="pin" length="short"/>
+<pin name="!RESET!@2" x="-17.78" y="-22.86" visible="pin" length="short"/>
+<pin name="GND" x="-17.78" y="-25.4" visible="pin" length="short"/>
+<pin name="RX-&gt;D0" x="17.78" y="-20.32" visible="pin" length="short" rot="R180"/>
+<pin name="TX-&gt;D1" x="17.78" y="-17.78" visible="pin" length="short" rot="R180"/>
+<pin name="D2" x="17.78" y="-15.24" visible="pin" length="short" rot="R180"/>
+<pin name="~D3" x="17.78" y="-12.7" visible="pin" length="short" rot="R180"/>
+<pin name="D4" x="17.78" y="-10.16" visible="pin" length="short" rot="R180"/>
+<pin name="~D5" x="17.78" y="-7.62" visible="pin" length="short" rot="R180"/>
+<pin name="~D6" x="17.78" y="-5.08" visible="pin" length="short" rot="R180"/>
+<pin name="D7" x="17.78" y="-2.54" visible="pin" length="short" rot="R180"/>
+<pin name="D8" x="17.78" y="2.54" visible="pin" length="short" rot="R180"/>
+<pin name="~D9" x="17.78" y="5.08" visible="pin" length="short" rot="R180"/>
+<pin name="~D10" x="17.78" y="7.62" visible="pin" length="short" rot="R180"/>
+<pin name="~D11" x="17.78" y="10.16" visible="pin" length="short" rot="R180"/>
+<pin name="D12" x="17.78" y="12.7" visible="pin" length="short" rot="R180"/>
+<pin name="D13" x="17.78" y="15.24" visible="pin" length="short" rot="R180"/>
+<pin name="SDA" x="17.78" y="22.86" visible="pin" length="short" rot="R180"/>
+<pin name="SCL" x="17.78" y="25.4" visible="pin" length="short" rot="R180"/>
+<text x="0" y="29.21" size="1.27" layer="95" font="vector" ratio="10" align="center">&gt;NAME</text>
+<text x="0" y="-28.702" size="0.8128" layer="96" font="vector" ratio="10" align="center">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -367,6 +367,7 @@
 <attribute name="DATASHEET" value="https://media.digikey.com/pdf/Data%20Sheets/Arduino%20PDFs/A000066_Web.pdf" constant="no"/>
 <attribute name="DIST" value="Digikey" constant="no"/>
 <attribute name="DISTLINK" value="https://www.digikey.com/products/en?keywords=1050-1024-ND" constant="no"/>
+<attribute name="DISTPN" value="1050-1024-ND" constant="no"/>
 <attribute name="MFR" value="Arduino" constant="no"/>
 <attribute name="MPN" value="A000066" constant="no"/>
 <attribute name="VALUE" value="Arduino UNO R3" constant="no"/>
@@ -606,10 +607,10 @@
 <instances>
 <instance part="ARDUINO1" gate="G$1" x="48.26" y="50.8"/>
 <instance part="BT1" gate="G$1" x="101.6" y="53.34" rot="MR0"/>
-<instance part="SUPPLY1" gate="GND" x="17.78" y="55.88"/>
+<instance part="SUPPLY1" gate="GND" x="27.94" y="55.88"/>
 <instance part="SUPPLY2" gate="GND" x="88.9" y="40.64"/>
 <instance part="SUPPLY3" gate="3.3V" x="88.9" y="60.96"/>
-<instance part="SUPPLY4" gate="3.3V" x="17.78" y="71.12"/>
+<instance part="SUPPLY4" gate="3.3V" x="27.94" y="71.12"/>
 </instances>
 <busses>
 </busses>
@@ -617,8 +618,8 @@
 <net name="RX" class="0">
 <segment>
 <pinref part="ARDUINO1" gate="G$1" pin="TX-&gt;D1"/>
-<wire x1="68.58" y1="33.02" x2="71.12" y2="33.02" width="0.1524" layer="91"/>
-<label x="71.12" y="33.02" size="1.27" layer="95" ratio="10" xref="yes"/>
+<wire x1="66.04" y1="33.02" x2="68.58" y2="33.02" width="0.1524" layer="91"/>
+<label x="68.58" y="33.02" size="1.27" layer="95" ratio="10" xref="yes"/>
 </segment>
 <segment>
 <pinref part="BT1" gate="G$1" pin="RX"/>
@@ -629,8 +630,8 @@
 <net name="TX" class="0">
 <segment>
 <pinref part="ARDUINO1" gate="G$1" pin="RX-&gt;D0"/>
-<wire x1="71.12" y1="30.48" x2="68.58" y2="30.48" width="0.1524" layer="91"/>
-<label x="71.12" y="30.48" size="1.27" layer="95" ratio="10" xref="yes"/>
+<wire x1="68.58" y1="30.48" x2="66.04" y2="30.48" width="0.1524" layer="91"/>
+<label x="68.58" y="30.48" size="1.27" layer="95" ratio="10" xref="yes"/>
 </segment>
 <segment>
 <pinref part="BT1" gate="G$1" pin="TX"/>
@@ -641,8 +642,8 @@
 <net name="GND" class="0">
 <segment>
 <pinref part="ARDUINO1" gate="G$1" pin="GND@1"/>
-<wire x1="27.94" y1="60.96" x2="17.78" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="60.96" x2="17.78" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="60.96" x2="27.94" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="60.96" x2="27.94" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="SUPPLY1" gate="GND" pin="GND"/>
 </segment>
 <segment>
@@ -661,8 +662,8 @@
 </segment>
 <segment>
 <pinref part="ARDUINO1" gate="G$1" pin="3.3V"/>
-<wire x1="27.94" y1="68.58" x2="17.78" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="68.58" x2="17.78" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="68.58" x2="27.94" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="68.58" x2="27.94" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="SUPPLY4" gate="3.3V" pin="3.3V"/>
 </segment>
 </net>
