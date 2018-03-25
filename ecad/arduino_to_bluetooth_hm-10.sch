@@ -617,26 +617,26 @@
 <nets>
 <net name="RX" class="0">
 <segment>
-<pinref part="ARDUINO1" gate="G$1" pin="TX-&gt;D1"/>
-<wire x1="66.04" y1="33.02" x2="68.58" y2="33.02" width="0.1524" layer="91"/>
-<label x="68.58" y="33.02" size="1.27" layer="95" ratio="10" xref="yes"/>
-</segment>
-<segment>
 <pinref part="BT1" gate="G$1" pin="RX"/>
 <wire x1="91.44" y1="53.34" x2="86.36" y2="53.34" width="0.1524" layer="91"/>
 <label x="86.36" y="53.34" size="1.27" layer="95" ratio="10" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="ARDUINO1" gate="G$1" pin="D2"/>
+<wire x1="68.58" y1="35.56" x2="66.04" y2="35.56" width="0.1524" layer="91"/>
+<label x="68.58" y="35.56" size="1.27" layer="95" ratio="10" xref="yes"/>
+</segment>
 </net>
 <net name="TX" class="0">
-<segment>
-<pinref part="ARDUINO1" gate="G$1" pin="RX-&gt;D0"/>
-<wire x1="68.58" y1="30.48" x2="66.04" y2="30.48" width="0.1524" layer="91"/>
-<label x="68.58" y="30.48" size="1.27" layer="95" ratio="10" xref="yes"/>
-</segment>
 <segment>
 <pinref part="BT1" gate="G$1" pin="TX"/>
 <wire x1="91.44" y1="55.88" x2="86.36" y2="55.88" width="0.1524" layer="91"/>
 <label x="86.36" y="55.88" size="1.27" layer="95" ratio="10" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="ARDUINO1" gate="G$1" pin="~D3"/>
+<wire x1="68.58" y1="38.1" x2="66.04" y2="38.1" width="0.1524" layer="91"/>
+<label x="68.58" y="38.1" size="1.27" layer="95" ratio="10" xref="yes"/>
 </segment>
 </net>
 <net name="GND" class="0">
