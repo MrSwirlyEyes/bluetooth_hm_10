@@ -697,16 +697,20 @@
 <gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
 </gates>
 <devices>
-<device name="_PTH-0207/7_1/8W-5%" package="RESISTOR-PTH-0207/7">
+<device name="_PTH-0207/7_1/4W-5%" package="RESISTOR-PTH-0207/7">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="CREATOR" value="MrSwirlyEyes" constant="no"/>
-<attribute name="TESTED" value="NO" constant="no"/>
-<attribute name="VALUE" value="1KΩ" constant="no"/>
+<attribute name="DATASHEET" value="http://www.yageo.com/documents/recent/Yageo%20LR_CFR_2013.pdf" constant="no"/>
+<attribute name="DIST" value="Digikey" constant="no"/>
+<attribute name="DISTLINK" value="https://www.digikey.com/products/en?keywords=1.0KQBK-ND" constant="no"/>
+<attribute name="DISTPN" value="1.0KQBK-ND" constant="no"/>
+<attribute name="MFR" value="Yageo" constant="no"/>
+<attribute name="MPN" value="CFR-25JB-52-1K" constant="no"/>
+<attribute name="VALUE" value="1K" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -754,16 +758,20 @@
 <gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
 </gates>
 <devices>
-<device name="_PTH-0207/7_1/8W-5%" package="RESISTOR-PTH-0207/7">
+<device name="_PTH-0207/7_1/4W-5%" package="RESISTOR-PTH-0207/7">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="CREATOR" value="MrSwirlyEyes" constant="no"/>
-<attribute name="TESTED" value="NO" constant="no"/>
-<attribute name="VALUE" value="2KΩ" constant="no"/>
+<attribute name="DATASHEET" value="http://www.yageo.com/documents/recent/Yageo%20LR_CFR_2013.pdf" constant="no"/>
+<attribute name="DIST" value="Digikey" constant="no"/>
+<attribute name="DISTLINK" value="https://www.digikey.com/products/en?keywords=2.0KQBK-ND" constant="no"/>
+<attribute name="DISTPN" value="2.0KQBK-ND" constant="no"/>
+<attribute name="MFR" value="Yageo" constant="no"/>
+<attribute name="MPN" value="CFR-25JB-52-2K" constant="no"/>
+<attribute name="VALUE" value="2K" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -805,8 +813,8 @@
 <part name="SUPPLY2" library="PiB_power_symbols" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="PiB_power_symbols" deviceset="3.3V" device=""/>
 <part name="SUPPLY4" library="PiB_power_symbols" deviceset="3.3V" device=""/>
-<part name="R1" library="PiB_resistors" deviceset="1KΩ" device="_PTH-0207/7_1/8W-5%" value="1KΩ"/>
-<part name="R2" library="PiB_resistors" deviceset="2KΩ" device="_PTH-0207/7_1/8W-5%" value="2KΩ"/>
+<part name="R1" library="PiB_resistors" deviceset="1KΩ" device="_PTH-0207/7_1/4W-5%" value="1K"/>
+<part name="R2" library="PiB_resistors" deviceset="2KΩ" device="_PTH-0207/7_1/4W-5%" value="2K"/>
 <part name="SUPPLY5" library="PiB_power_symbols" deviceset="GND" device=""/>
 </parts>
 <sheets>
