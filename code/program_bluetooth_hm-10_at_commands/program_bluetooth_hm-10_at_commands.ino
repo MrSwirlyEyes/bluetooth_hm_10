@@ -10,20 +10,50 @@
 // the Arduino will relay it to the HM-10
 //
 
+// Library to make a Software UART
 #include <SoftwareSerial.h>
 
-SoftwareSerial BTSerial(3, 2); // RX | TX
+#define RX 3
+#define TX 2
 
-void setup() {
+char c = ' ';
+boolean new_line = true;
+
+// Instantiation of a Software UART
+SoftwareSerial BTSerial(RX, TX); // (RX, TX)
+
+void setup() {  
   Serial.begin(9600);
+  
+  // HM-10 default speed in AT command mode
+  BTSerial.begin(9600);
+  
   Serial.println("Enter AT commands:");
-  BTSerial.begin(9600);  // HM-10 default speed in AT command more
 }
 
 void loop() {
   // Keep reading from HM-10 and send to Arduino Serial Monitor
-  if (BTSerial.available()) { Serial.write(BTSerial.read()); }
+  if (BTSerial.available())
+    Serial.write(BTSerial.read());
 
   // Keep reading from Arduino Serial Monitor and send to HM-10
-  if (Serial.available()) { BTSerial.write(Serial.read()); }
+  if (Serial.available()) { 
+    c = Serial.read();
+
+    // Do not send newline ('\n') nor carriage return ('\r') characters
+    if(c != 10 && c != 13)
+      BTSerial.write(c);
+
+    // If a newline ('\n') is true; print newline + prompt symbol; toggle
+    if (new_line) { 
+      Serial.print("\r\n>");
+      new_line = false;
+    }
+    
+    Serial.write(c);
+    
+    // If a newline ('\n') is read, toggle
+    if (c == 10)
+      new_line = true;
+  }
 }
