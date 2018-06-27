@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.5" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -509,7 +509,6 @@
 </connects>
 <technologies>
 <technology name="">
-<attribute name="CREATOR" value="MrSwirlyEyes" constant="no"/>
 <attribute name="DATASHEET" value="http://fab.cba.mit.edu/classes/863.15/doc/tutorials/programming/bluetooth/bluetooth40_en.pdf" constant="no"/>
 <attribute name="DATASHEET_CONNECTOR" value="http://sullinscorp.com/catalogs/101_PAGE114-115_.100_FEMALE_HDR.pdf" constant="no"/>
 <attribute name="DIST" value="Amazon" constant="no"/>
@@ -522,8 +521,7 @@
 <attribute name="MFR_CONNECTOR" value="Sullins Connector Solutions" constant="no"/>
 <attribute name="MPN" value="HM-10" constant="no"/>
 <attribute name="MPN_CONNECTOR" value="PPTC061LGBN-RC" constant="no"/>
-<attribute name="TESTED" value="NO" constant="no"/>
-<attribute name="VALUE" value="BT HM-10" constant="no"/>
+<attribute name="VALUE" value="HM-10" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -972,7 +970,7 @@
 </classes>
 <parts>
 <part name="ARDUINO" library="PiB_boards" deviceset="ARDUINO_UNO_R3" device="" value="Arduino UNO R3"/>
-<part name="BT" library="PiB_radio_frequency" deviceset="BLUETOOTH_HM-10" device="1X06-RA-FEMALE" value="BT HM-10"/>
+<part name="BT" library="PiB_radio_frequency" deviceset="BLUETOOTH_HM-10" device="1X06-RA-FEMALE" value="HM-10"/>
 <part name="SUPPLY1" library="PiB_power_symbols" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="PiB_power_symbols" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="PiB_power_symbols" deviceset="3.3V" device=""/>
