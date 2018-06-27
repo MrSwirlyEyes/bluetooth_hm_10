@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.6.3">
+<eagle version="9.0.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.5" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -365,11 +365,17 @@
 <technologies>
 <technology name="">
 <attribute name="DATASHEET" value="https://media.digikey.com/pdf/Data%20Sheets/Arduino%20PDFs/A000066_Web.pdf" constant="no"/>
+<attribute name="DATASHEET_CABLE" value="http://www.assmann-wsw.com/fileadmin/datasheets/ASS_7066_CA.pdf" constant="no"/>
 <attribute name="DIST" value="Digikey" constant="no"/>
 <attribute name="DISTLINK" value="https://www.digikey.com/products/en?keywords=1050-1024-ND" constant="no"/>
+<attribute name="DISTLINK_CABLE" value="https://www.digikey.com/products/en?keywords=AE1462-ND" constant="no"/>
 <attribute name="DISTPN" value="1050-1024-ND" constant="no"/>
+<attribute name="DISTPN_CABLE" value="AE1462-ND" constant="no"/>
+<attribute name="DIST_CABLE" value="Digikey" constant="no"/>
 <attribute name="MFR" value="Arduino" constant="no"/>
+<attribute name="MFR_CABLE" value="Assmann WSW Components" constant="no"/>
 <attribute name="MPN" value="A000066" constant="no"/>
+<attribute name="MPN_CABLE" value="AK672/2-1" constant="no"/>
 <attribute name="VALUE" value="Arduino UNO R3" constant="no"/>
 </technology>
 </technologies>
@@ -380,72 +386,88 @@
 </library>
 <library name="PiB_radio_frequency">
 <packages>
-<package name="1X06-RA-FEMALE_CONNECTOR_BLUETOOTH_HM-10">
+<package name="1X06-RA-FEMALE_CONNECTOR_BLUETOOTH_HM-10" urn="urn:adsk.eagle:footprint:3729583/1" locally_modified="yes">
 <wire x1="-1.27" y1="7.747" x2="2.54" y2="7.747" width="0.2032" layer="21"/>
-<wire x1="2.54" y1="7.747" x2="11.049" y2="7.747" width="0.2032" layer="21"/>
-<wire x1="11.049" y1="7.747" x2="11.049" y2="-7.747" width="0.2032" layer="21"/>
+<wire x1="2.54" y1="7.747" x2="10.049" y2="7.747" width="0.2032" layer="21"/>
+<wire x1="10.049" y1="7.747" x2="10.049" y2="-7.747" width="0.2032" layer="21"/>
 <wire x1="-1.27" y1="-7.747" x2="-1.27" y2="7.747" width="0.2032" layer="21"/>
-<pad name="GND" x="0" y="-1.27" drill="1.016" diameter="1.8796" rot="R180"/>
-<pad name="TX" x="0" y="1.27" drill="1.016" diameter="1.8796" rot="R180"/>
-<pad name="RX" x="0" y="3.81" drill="1.016" diameter="1.8796" rot="R180"/>
-<pad name="STATE" x="0" y="6.35" drill="1.016" diameter="1.8796" rot="R180"/>
-<rectangle x1="-0.254" y1="6.096" x2="0.254" y2="6.604" layer="51" rot="R90"/>
-<rectangle x1="-0.254" y1="3.556" x2="0.254" y2="4.064" layer="51" rot="R90"/>
-<rectangle x1="-0.254" y1="1.016" x2="0.254" y2="1.524" layer="51" rot="R90"/>
-<rectangle x1="-0.254" y1="-1.524" x2="0.254" y2="-1.016" layer="51" rot="R90"/>
-<text x="-1.778" y="-1.27" size="0.6096" layer="21" font="vector" ratio="10" rot="SR270" align="center">GND</text>
-<text x="-1.778" y="6.35" size="0.6096" layer="21" font="vector" ratio="10" rot="SR270" align="center">BRK</text>
-<text x="-1.778" y="1.27" size="0.6096" layer="21" font="vector" ratio="10" rot="SR270" align="center">TX</text>
-<text x="-1.778" y="3.81" size="0.6096" layer="21" font="vector" ratio="10" rot="SR270" align="center">RX</text>
-<text x="0" y="8.382" size="0.8128" layer="25" font="vector" ratio="10" align="center">&gt;NAME</text>
-<text x="0" y="-8.128" size="0.6096" layer="27" font="vector" ratio="10" align="center">&gt;VALUE</text>
-<pad name="VCC" x="0" y="-3.81" drill="1.016" diameter="1.8796" rot="R180"/>
 <wire x1="-1.27" y1="-7.747" x2="2.54" y2="-7.747" width="0.2032" layer="21"/>
-<rectangle x1="-0.254" y1="-4.064" x2="0.254" y2="-3.556" layer="51" rot="R90"/>
-<text x="-1.778" y="-3.81" size="0.6096" layer="21" font="vector" ratio="10" rot="SR270" align="center">VCC</text>
-<wire x1="2.54" y1="-7.747" x2="11.049" y2="-7.747" width="0.2032" layer="21"/>
+<wire x1="2.54" y1="-7.747" x2="10.049" y2="-7.747" width="0.2032" layer="21"/>
 <wire x1="2.54" y1="7.747" x2="2.54" y2="-7.747" width="0.2032" layer="21"/>
-<pad name="EN" x="0" y="-6.35" drill="1.016" diameter="1.8796" rot="R180"/>
-<rectangle x1="-0.254" y1="-6.604" x2="0.254" y2="-6.096" layer="51" rot="R90"/>
-<text x="-1.778" y="-6.35" size="0.6096" layer="21" font="vector" ratio="10" rot="SR270" align="center">STATE</text>
-</package>
-<package name="1X06-VERT-FEMALE_CONNECTOR_BLUETOOTH_HM-10">
-<pad name="GND" x="0" y="-1.27" drill="1.016" diameter="1.8796" rot="R180"/>
-<pad name="TX" x="0" y="1.27" drill="1.016" diameter="1.8796" rot="R180"/>
-<pad name="RX" x="0" y="3.81" drill="1.016" diameter="1.8796" rot="R180"/>
+<pad name="TX" x="0" y="-1.27" drill="1.016" diameter="1.8796" rot="R180"/>
+<pad name="GND" x="0" y="1.27" drill="1.016" diameter="1.8796" rot="R180"/>
+<pad name="VCC" x="0" y="3.81" drill="1.016" diameter="1.8796" rot="R180"/>
 <pad name="STATE" x="0" y="6.35" drill="1.016" diameter="1.8796" rot="R180"/>
+<pad name="RX" x="0" y="-3.81" drill="1.016" diameter="1.8796" rot="R180"/>
+<pad name="BRK" x="0" y="-6.35" drill="1.016" diameter="1.8796" rot="R180"/>
 <rectangle x1="-0.254" y1="6.096" x2="0.254" y2="6.604" layer="51" rot="R90"/>
 <rectangle x1="-0.254" y1="3.556" x2="0.254" y2="4.064" layer="51" rot="R90"/>
 <rectangle x1="-0.254" y1="1.016" x2="0.254" y2="1.524" layer="51" rot="R90"/>
 <rectangle x1="-0.254" y1="-1.524" x2="0.254" y2="-1.016" layer="51" rot="R90"/>
-<text x="-1.778" y="-1.27" size="0.6096" layer="21" font="vector" ratio="10" rot="SR270" align="center">GND</text>
-<text x="-1.778" y="6.35" size="0.6096" layer="21" font="vector" ratio="10" rot="SR270" align="center">BRK</text>
-<text x="-1.778" y="1.27" size="0.6096" layer="21" font="vector" ratio="10" rot="SR270" align="center">TX</text>
-<text x="-1.778" y="3.81" size="0.6096" layer="21" font="vector" ratio="10" rot="SR270" align="center">RX</text>
-<text x="2.667" y="0" size="0.8128" layer="25" font="vector" ratio="10" rot="SR270" align="center">&gt;NAME</text>
-<text x="1.778" y="0" size="0.6096" layer="27" font="vector" ratio="10" rot="SR270" align="center">&gt;VALUE</text>
-<pad name="VCC" x="0" y="-3.81" drill="1.016" diameter="1.8796" rot="R180"/>
 <rectangle x1="-0.254" y1="-4.064" x2="0.254" y2="-3.556" layer="51" rot="R90"/>
-<text x="-1.778" y="-3.81" size="0.6096" layer="21" font="vector" ratio="10" rot="SR270" align="center">VCC</text>
-<pad name="EN" x="0" y="-6.35" drill="1.016" diameter="1.8796" rot="R180"/>
 <rectangle x1="-0.254" y1="-6.604" x2="0.254" y2="-6.096" layer="51" rot="R90"/>
-<text x="-1.778" y="-6.35" size="0.6096" layer="21" font="vector" ratio="10" rot="SR270" align="center">STATE</text>
+<text x="1.27" y="-1.27" size="0.5" layer="21" font="vector" ratio="10" rot="SR270" align="bottom-center">TX</text>
+<text x="1.27" y="6.35" size="0.5" layer="21" font="vector" ratio="10" rot="SR270" align="bottom-center">STATE</text>
+<text x="1.27" y="1.27" size="0.5" layer="21" font="vector" ratio="10" rot="SR270" align="bottom-center">GND</text>
+<text x="1.27" y="3.81" size="0.5" layer="21" font="vector" ratio="10" rot="SR270" align="bottom-center">VCC</text>
+<text x="0" y="8.1" size="0.5" layer="25" font="vector" ratio="10" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-8.1" size="0.5" layer="27" font="vector" ratio="10" align="top-center">&gt;VALUE</text>
+<text x="1.27" y="-3.81" size="0.5" layer="21" font="vector" ratio="10" rot="SR270" align="bottom-center">RX</text>
+<text x="1.27" y="-6.35" size="0.6096" layer="21" font="vector" ratio="10" rot="SR270" align="bottom-center">BRK</text>
+<wire x1="-1.5" y1="-7.9" x2="10.2" y2="-7.9" width="0.127" layer="39"/>
+<wire x1="10.2" y1="-7.9" x2="10.2" y2="7.9" width="0.127" layer="39"/>
+<wire x1="10.2" y1="7.9" x2="-1.5" y2="7.9" width="0.127" layer="39"/>
+<wire x1="-1.5" y1="7.9" x2="-1.5" y2="-7.9" width="0.127" layer="39"/>
+</package>
+<package name="1X06-VERT-FEMALE_CONNECTOR_BLUETOOTH_HM-10" urn="urn:adsk.eagle:footprint:3729582/1" locally_modified="yes">
+<pad name="GND" x="0" y="-1.27" drill="1.016" diameter="1.8796" rot="R180"/>
+<pad name="TX" x="0" y="1.27" drill="1.016" diameter="1.8796" rot="R180"/>
+<pad name="RX" x="0" y="3.81" drill="1.016" diameter="1.8796" rot="R180"/>
+<pad name="BRK" x="0" y="6.35" drill="1.016" diameter="1.8796" rot="R180"/>
+<pad name="VCC" x="0" y="-3.81" drill="1.016" diameter="1.8796" rot="R180"/>
+<pad name="STATE" x="0" y="-6.35" drill="1.016" diameter="1.8796" rot="R180"/>
+<rectangle x1="-0.254" y1="6.096" x2="0.254" y2="6.604" layer="51" rot="R90"/>
+<rectangle x1="-0.254" y1="3.556" x2="0.254" y2="4.064" layer="51" rot="R90"/>
+<rectangle x1="-0.254" y1="1.016" x2="0.254" y2="1.524" layer="51" rot="R90"/>
+<rectangle x1="-0.254" y1="-1.524" x2="0.254" y2="-1.016" layer="51" rot="R90"/>
+<rectangle x1="-0.254" y1="-4.064" x2="0.254" y2="-3.556" layer="51" rot="R90"/>
+<rectangle x1="-0.254" y1="-6.604" x2="0.254" y2="-6.096" layer="51" rot="R90"/>
+<rectangle x1="-0.254" y1="-1.524" x2="0.254" y2="-1.016" layer="51" rot="R90"/>
+<rectangle x1="-0.254" y1="-4.064" x2="0.254" y2="-3.556" layer="51" rot="R90"/>
+<rectangle x1="-0.254" y1="-6.604" x2="0.254" y2="-6.096" layer="51" rot="R90"/>
+<rectangle x1="-0.254" y1="6.096" x2="0.254" y2="6.604" layer="51" rot="R90"/>
+<rectangle x1="-0.254" y1="3.556" x2="0.254" y2="4.064" layer="51" rot="R90"/>
+<rectangle x1="-0.254" y1="1.016" x2="0.254" y2="1.524" layer="51" rot="R90"/>
+<text x="-1.678" y="-1.27" size="0.5" layer="21" font="vector" ratio="10" rot="SR270" align="center">GND</text>
+<text x="-1.678" y="6.35" size="0.5" layer="21" font="vector" ratio="10" rot="SR270" align="center">BRK</text>
+<text x="-1.678" y="1.27" size="0.5" layer="21" font="vector" ratio="10" rot="SR270" align="center">TX</text>
+<text x="-1.678" y="3.81" size="0.5" layer="21" font="vector" ratio="10" rot="SR270" align="center">RX</text>
+<text x="0" y="8.2" size="0.5" layer="25" font="vector" ratio="10" rot="SR0" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-8.2" size="0.5" layer="27" font="vector" ratio="10" rot="SR0" align="top-center">&gt;VALUE</text>
+<text x="-1.678" y="-3.81" size="0.5" layer="21" font="vector" ratio="10" rot="SR270" align="center">VCC</text>
+<text x="-1.678" y="-6.35" size="0.5" layer="21" font="vector" ratio="10" rot="SR270" align="center">STATE</text>
 <wire x1="-1.27" y1="-7.87" x2="-1.27" y2="7.87" width="0.2032" layer="21"/>
 <wire x1="1.27" y1="7.87" x2="1.27" y2="-7.87" width="0.2032" layer="21"/>
 <wire x1="-1.27" y1="-7.87" x2="1.27" y2="-7.87" width="0.2032" layer="21"/>
-<rectangle x1="-0.254" y1="-1.524" x2="0.254" y2="-1.016" layer="51" rot="R90"/>
-<rectangle x1="-0.254" y1="-4.064" x2="0.254" y2="-3.556" layer="51" rot="R90"/>
-<rectangle x1="-0.254" y1="-6.604" x2="0.254" y2="-6.096" layer="51" rot="R90"/>
-<rectangle x1="-0.254" y1="6.096" x2="0.254" y2="6.604" layer="51" rot="R90"/>
-<rectangle x1="-0.254" y1="3.556" x2="0.254" y2="4.064" layer="51" rot="R90"/>
-<rectangle x1="-0.254" y1="1.016" x2="0.254" y2="1.524" layer="51" rot="R90"/>
 <wire x1="-1.27" y1="7.87" x2="1.27" y2="7.87" width="0.2032" layer="21"/>
-<wire x1="1.524" y1="-8.128" x2="1.524" y2="8.128" width="0.127" layer="39"/>
+<wire x1="1.5" y1="-8.1" x2="1.524" y2="8.128" width="0.127" layer="39"/>
 <wire x1="1.524" y1="8.128" x2="-1.524" y2="8.128" width="0.127" layer="39"/>
-<wire x1="-1.524" y1="8.128" x2="-1.524" y2="-8.128" width="0.127" layer="39"/>
-<wire x1="-1.524" y1="-8.128" x2="1.524" y2="-8.128" width="0.127" layer="39"/>
+<wire x1="-1.524" y1="8.128" x2="-1.5" y2="-8.1" width="0.127" layer="39"/>
+<wire x1="-1.5" y1="-8.1" x2="1.5" y2="-8.1" width="0.127" layer="39"/>
 </package>
 </packages>
+<packages3d>
+<package3d name="1X06-RA-FEMALE_CONNECTOR_BLUETOOTH_HM-10" urn="urn:adsk.eagle:package:3729594/2" locally_modified="yes" type="model">
+<packageinstances>
+<packageinstance name="1X06-RA-FEMALE_CONNECTOR_BLUETOOTH_HM-10"/>
+</packageinstances>
+</package3d>
+<package3d name="1X06-VERT-FEMALE_CONNECTOR_BLUETOOTH_HM-10" urn="urn:adsk.eagle:package:3729593/2" locally_modified="yes" type="model">
+<packageinstances>
+<packageinstance name="1X06-VERT-FEMALE_CONNECTOR_BLUETOOTH_HM-10"/>
+</packageinstances>
+</package3d>
+</packages3d>
 <symbols>
 <symbol name="BLUETOOTH_HM-10">
 <wire x1="6.35" y1="-10.16" x2="-5.08" y2="-10.16" width="0.4064" layer="94"/>
@@ -457,15 +479,15 @@
 <wire x1="-5.08" y1="7.62" x2="6.35" y2="7.62" width="0.4064" layer="94"/>
 <wire x1="3.81" y1="5.08" x2="5.08" y2="5.08" width="0.6096" layer="94"/>
 <wire x1="3.81" y1="2.54" x2="5.08" y2="2.54" width="0.6096" layer="94"/>
-<pin name="EN" x="10.16" y="-5.08" visible="pin" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="STATE" x="10.16" y="-2.54" visible="pin" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="RX" x="10.16" y="0" visible="pin" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="TX" x="10.16" y="2.54" visible="pin" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="VCC" x="10.16" y="5.08" visible="pin" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<text x="0" y="8.128" size="0.8128" layer="95" font="vector" ratio="10" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-10.668" size="0.6096" layer="96" font="vector" ratio="10" align="top-center">&gt;VALUE</text>
+<pin name="BRK" x="10.16" y="-5.08" visible="pin" length="middle" direction="nc" swaplevel="1" rot="R180"/>
+<pin name="STATE" x="10.16" y="-2.54" visible="pin" length="middle" direction="nc" swaplevel="1" rot="R180"/>
+<pin name="RX" x="10.16" y="0" visible="pin" length="middle" direction="in" swaplevel="1" rot="R180"/>
+<pin name="TX" x="10.16" y="2.54" visible="pin" length="middle" direction="out" swaplevel="1" rot="R180"/>
+<pin name="VCC" x="10.16" y="5.08" visible="pin" length="middle" direction="pwr" swaplevel="1" rot="R180"/>
+<text x="0" y="8.128" size="1.27" layer="95" font="vector" ratio="10" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-10.668" size="1.27" layer="96" font="vector" ratio="10" align="top-center">&gt;VALUE</text>
 <wire x1="3.81" y1="-7.62" x2="5.08" y2="-7.62" width="0.6096" layer="94"/>
-<pin name="GND" x="10.16" y="-7.62" visible="pin" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="GND" x="10.16" y="-7.62" visible="pin" length="middle" direction="pwr" swaplevel="1" rot="R180"/>
 <text x="10.16" y="-2.54" size="1.27" layer="97" ratio="10">NC</text>
 <text x="10.16" y="-5.08" size="1.27" layer="97" ratio="10">NC</text>
 </symbol>
@@ -478,12 +500,12 @@
 <devices>
 <device name="1X06-RA-FEMALE" package="1X06-RA-FEMALE_CONNECTOR_BLUETOOTH_HM-10">
 <connects>
-<connect gate="G$1" pin="EN" pad="EN"/>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="RX" pad="RX"/>
+<connect gate="G$1" pin="BRK" pad="BRK"/>
+<connect gate="G$1" pin="GND" pad="TX"/>
+<connect gate="G$1" pin="RX" pad="VCC"/>
 <connect gate="G$1" pin="STATE" pad="STATE"/>
-<connect gate="G$1" pin="TX" pad="TX"/>
-<connect gate="G$1" pin="VCC" pad="VCC"/>
+<connect gate="G$1" pin="TX" pad="GND"/>
+<connect gate="G$1" pin="VCC" pad="RX"/>
 </connects>
 <technologies>
 <technology name="">
@@ -507,10 +529,10 @@
 </device>
 <device name="1X06-VERT-FEMALE" package="1X06-VERT-FEMALE_CONNECTOR_BLUETOOTH_HM-10">
 <connects>
-<connect gate="G$1" pin="EN" pad="EN"/>
+<connect gate="G$1" pin="BRK" pad="STATE"/>
 <connect gate="G$1" pin="GND" pad="GND"/>
 <connect gate="G$1" pin="RX" pad="RX"/>
-<connect gate="G$1" pin="STATE" pad="STATE"/>
+<connect gate="G$1" pin="STATE" pad="BRK"/>
 <connect gate="G$1" pin="TX" pad="TX"/>
 <connect gate="G$1" pin="VCC" pad="VCC"/>
 </connects>
@@ -532,6 +554,38 @@
 <attribute name="TESTED" value="NO" constant="no"/>
 <attribute name="VALUE" value="HM-10" constant="no"/>
 </technology>
+</technologies>
+</device>
+<device name="_1X06_PTH_RA_FEMALE" package="1X06-RA-FEMALE_CONNECTOR_BLUETOOTH_HM-10">
+<connects>
+<connect gate="G$1" pin="BRK" pad="BRK"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="RX" pad="RX"/>
+<connect gate="G$1" pin="STATE" pad="STATE"/>
+<connect gate="G$1" pin="TX" pad="TX"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:3729594/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_1X06_PTH_VERT_FEMALE" package="1X06-VERT-FEMALE_CONNECTOR_BLUETOOTH_HM-10">
+<connects>
+<connect gate="G$1" pin="BRK" pad="STATE"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="RX" pad="RX"/>
+<connect gate="G$1" pin="STATE" pad="BRK"/>
+<connect gate="G$1" pin="TX" pad="TX"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:3729593/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -585,7 +639,7 @@
 </library>
 <library name="PiB_resistors">
 <packages>
-<package name="RESISTOR-PTH-0207/7">
+<package name="RESISTOR-PTH-0207/7" urn="urn:adsk.eagle:footprint:2749844/1">
 <wire x1="-3.81" y1="0" x2="-3.429" y2="0" width="0.6096" layer="51"/>
 <wire x1="-3.175" y1="0.889" x2="-2.921" y2="1.143" width="0.1524" layer="21" curve="-90"/>
 <wire x1="-3.175" y1="-0.889" x2="-2.921" y2="-1.143" width="0.1524" layer="21" curve="90"/>
@@ -611,18 +665,12 @@
 <text x="0" y="0" size="0.6096" layer="25" font="vector" ratio="10" align="center">&gt;NAME</text>
 <text x="0" y="-1.397" size="0.6096" layer="27" font="vector" ratio="10" align="top-center">&gt;VALUE</text>
 </package>
-<package name="RESISTOR_SMD-805">
+<package name="RESISTOR_SMD-805" urn="urn:adsk.eagle:footprint:2749845/1" locally_modified="yes">
 <description>Resistor, Chip; 2.00 mm L X 1.25 mm W X 0.60 mm H body&lt;p&gt;&lt;i&gt;PCB Libraries Packages&lt;/i&gt;</description>
 <wire x1="-1.05" y1="-0.68" x2="-1.05" y2="0.68" width="0.12" layer="51"/>
 <wire x1="-1.05" y1="0.68" x2="1.05" y2="0.68" width="0.12" layer="51"/>
-<text x="0" y="1.3" size="0.6096" layer="25" font="vector" ratio="10" rot="R180" align="center">&gt;NAME</text>
-<text x="0" y="-1.316" size="0.6096" layer="27" font="vector" ratio="10" align="center">&gt;VALUE</text>
 <wire x1="1.05" y1="-0.68" x2="-1.05" y2="-0.68" width="0.12" layer="51"/>
 <wire x1="1.05" y1="0.68" x2="1.05" y2="-0.68" width="0.12" layer="51"/>
-<smd name="1" x="-1" y="0" dx="1" dy="1.45" layer="1" roundness="50" rot="R180"/>
-<smd name="2" x="1" y="0" dx="1" dy="1.45" layer="1" roundness="50"/>
-<rectangle x1="-1.1" y1="-0.625" x2="-0.5" y2="0.625" layer="51"/>
-<rectangle x1="0.5" y1="-0.625" x2="1.1" y2="0.625" layer="51"/>
 <wire x1="-0.5" y1="0" x2="-0.4" y2="0" width="0.1" layer="21"/>
 <wire x1="-0.4" y1="0" x2="-0.3" y2="0.2" width="0.1" layer="21"/>
 <wire x1="-0.3" y1="0.2" x2="-0.2" y2="-0.2" width="0.1" layer="21"/>
@@ -641,38 +689,102 @@
 <wire x1="-1.651" y1="-0.889" x2="1.651" y2="-0.889" width="0.1" layer="21"/>
 <wire x1="1.651" y1="-0.889" x2="1.651" y2="0.889" width="0.1" layer="21"/>
 <wire x1="1.651" y1="0.889" x2="-1.651" y2="0.889" width="0.1" layer="21"/>
+<text x="0" y="1.3" size="0.6096" layer="25" font="vector" ratio="10" rot="R180" align="center">&gt;NAME</text>
+<text x="0" y="-1.316" size="0.6096" layer="27" font="vector" ratio="10" align="center">&gt;VALUE</text>
+<smd name="1" x="-1" y="0" dx="1" dy="1.45" layer="1" roundness="50" rot="R180"/>
+<smd name="2" x="1" y="0" dx="1" dy="1.45" layer="1" roundness="50"/>
+<rectangle x1="-1.1" y1="-0.625" x2="-0.5" y2="0.625" layer="51"/>
+<rectangle x1="0.5" y1="-0.625" x2="1.1" y2="0.625" layer="51"/>
 </package>
-<package name="RESISTOR_SMD-603">
-<wire x1="-0.5" y1="0" x2="-0.4" y2="0" width="0.1" layer="21"/>
-<wire x1="-0.4" y1="0" x2="-0.3" y2="0.2" width="0.1" layer="21"/>
-<wire x1="-0.3" y1="0.2" x2="-0.2" y2="-0.2" width="0.1" layer="21"/>
-<wire x1="-0.2" y1="-0.2" x2="-0.1" y2="0.2" width="0.1" layer="21"/>
-<wire x1="0.4" y1="0" x2="0.5" y2="0" width="0.1" layer="21"/>
-<wire x1="0.2" y1="-0.2" x2="0.3" y2="0.2" width="0.1" layer="21"/>
-<wire x1="0.3" y1="0.2" x2="0.4" y2="0" width="0.1" layer="21"/>
-<wire x1="-0.1" y1="0.2" x2="0" y2="-0.2" width="0.1" layer="21"/>
-<wire x1="0" y1="-0.2" x2="0.1" y2="0.2" width="0.1" layer="21"/>
-<wire x1="0.1" y1="0.2" x2="0.2" y2="-0.2" width="0.1" layer="21"/>
-<smd name="1" x="-0.975" y="0" dx="0.95" dy="0.95" layer="1" roundness="50"/>
-<smd name="2" x="0.975" y="0" dx="0.95" dy="0.95" layer="1" roundness="50"/>
-<wire x1="-0.8" y1="-0.4" x2="-0.8" y2="0.4" width="0.1" layer="51"/>
-<wire x1="-0.8" y1="0.4" x2="0.8" y2="0.4" width="0.1" layer="51"/>
-<text x="0" y="1.046" size="0.6096" layer="25" font="vector" ratio="10" rot="R180" align="center">&gt;NAME</text>
-<text x="0" y="-1.062" size="0.6096" layer="27" font="vector" ratio="10" align="center">&gt;VALUE</text>
-<wire x1="0.8" y1="-0.4" x2="-0.8" y2="-0.4" width="0.1" layer="51"/>
-<wire x1="0.8" y1="0.4" x2="0.8" y2="-0.4" width="0.1" layer="51"/>
-<rectangle x1="-0.8" y1="-0.4" x2="-0.6" y2="0.4" layer="51"/>
-<rectangle x1="0.6" y1="-0.4" x2="0.8" y2="0.4" layer="51"/>
-<wire x1="-1.578" y1="0.616" x2="-1.578" y2="-0.616" width="0.1" layer="39"/>
-<wire x1="-1.578" y1="-0.616" x2="1.578" y2="-0.616" width="0.1" layer="39"/>
-<wire x1="1.578" y1="-0.616" x2="1.578" y2="0.616" width="0.1" layer="39"/>
-<wire x1="1.578" y1="0.616" x2="-1.578" y2="0.616" width="0.1" layer="39"/>
-<wire x1="-1.551" y1="0.589" x2="-1.551" y2="-0.589" width="0.1" layer="21"/>
-<wire x1="-1.551" y1="-0.589" x2="1.551" y2="-0.589" width="0.1" layer="21"/>
-<wire x1="1.551" y1="-0.589" x2="1.551" y2="0.589" width="0.1" layer="21"/>
-<wire x1="1.551" y1="0.589" x2="-1.551" y2="0.589" width="0.1" layer="21"/>
+<package name="RESC1005X35_SMD-0402" urn="urn:adsk.eagle:footprint:2899254/1" locally_modified="yes">
+<description>CHIP, 1 X 0.5 X 0.35 mm body
+&lt;p&gt;CHIP package with body size 1 X 0.5 X 0.35 mm&lt;/p&gt;</description>
+<wire x1="0.525" y1="0.464" x2="-0.525" y2="0.464" width="0.12" layer="21"/>
+<wire x1="0.525" y1="-0.464" x2="-0.525" y2="-0.464" width="0.12" layer="21"/>
+<wire x1="0.525" y1="-0.275" x2="-0.525" y2="-0.275" width="0.12" layer="51"/>
+<wire x1="-0.525" y1="-0.275" x2="-0.525" y2="0.275" width="0.12" layer="51"/>
+<wire x1="-0.525" y1="0.275" x2="0.525" y2="0.275" width="0.12" layer="51"/>
+<wire x1="0.525" y1="0.275" x2="0.525" y2="-0.275" width="0.12" layer="51"/>
+<smd name="1" x="-0.4825" y="0" dx="0.5351" dy="0.6" layer="1" thermals="no"/>
+<smd name="2" x="0.4825" y="0" dx="0.5351" dy="0.6" layer="1" thermals="no"/>
+<text x="0" y="0.7" size="0.5" layer="25" font="vector" ratio="10" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-0.7" size="0.5" layer="27" font="vector" ratio="10" align="top-center">&gt;VALUE</text>
+<wire x1="-1" y1="0.6" x2="-1" y2="-0.6" width="0.127" layer="39"/>
+<wire x1="-1" y1="-0.6" x2="1" y2="-0.6" width="0.127" layer="39"/>
+<wire x1="1" y1="-0.6" x2="1" y2="0.6" width="0.127" layer="39"/>
+<wire x1="1" y1="0.6" x2="-1" y2="0.6" width="0.127" layer="39"/>
+</package>
+<package name="RESC1608X65_SMD-0603" urn="urn:adsk.eagle:footprint:2959475/1" locally_modified="yes">
+<description>CHIP, 1.6 X 0.8 X 0.65 mm body
+&lt;p&gt;CHIP package with body size 1.6 X 0.8 X 0.65 mm&lt;/p&gt;</description>
+<wire x1="0.85" y1="0.6786" x2="-0.85" y2="0.6786" width="0.12" layer="21"/>
+<wire x1="0.85" y1="-0.6786" x2="-0.85" y2="-0.6786" width="0.12" layer="21"/>
+<wire x1="0.85" y1="-0.45" x2="-0.85" y2="-0.45" width="0.12" layer="51"/>
+<wire x1="-0.85" y1="-0.45" x2="-0.85" y2="0.45" width="0.12" layer="51"/>
+<wire x1="-0.85" y1="0.45" x2="0.85" y2="0.45" width="0.12" layer="51"/>
+<wire x1="0.85" y1="0.45" x2="0.85" y2="-0.45" width="0.12" layer="51"/>
+<smd name="1" x="-0.8204" y="0" dx="0.7884" dy="0.9291" layer="1" thermals="no"/>
+<smd name="2" x="0.8204" y="0" dx="0.7884" dy="0.9291" layer="1" thermals="no"/>
+<text x="0" y="1.4136" size="1.27" layer="25" font="vector" ratio="10" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.4136" size="1.27" layer="27" font="vector" ratio="10" align="top-center">&gt;VALUE</text>
+<wire x1="-1.5" y1="-0.7" x2="1.5" y2="-0.7" width="0.127" layer="39"/>
+<wire x1="1.5" y1="-0.7" x2="1.5" y2="0.7" width="0.127" layer="39"/>
+<wire x1="1.5" y1="0.7" x2="-1.5" y2="0.7" width="0.127" layer="39"/>
+<wire x1="-1.5" y1="0.7" x2="-1.5" y2="-0.7" width="0.127" layer="39"/>
+</package>
+<package name="RESC2012X60_SMD-0805" urn="urn:adsk.eagle:footprint:3034997/1" locally_modified="yes">
+<description>CHIP, 2 X 1.25 X 0.6 mm body
+&lt;p&gt;CHIP package with body size 2 X 1.25 X 0.6 mm&lt;/p&gt;</description>
+<wire x1="1.05" y1="0.9036" x2="-1.05" y2="0.9036" width="0.12" layer="21"/>
+<wire x1="1.05" y1="-0.9036" x2="-1.05" y2="-0.9036" width="0.12" layer="21"/>
+<wire x1="1.05" y1="-0.675" x2="-1.05" y2="-0.675" width="0.12" layer="51"/>
+<wire x1="-1.05" y1="-0.675" x2="-1.05" y2="0.675" width="0.12" layer="51"/>
+<wire x1="-1.05" y1="0.675" x2="1.05" y2="0.675" width="0.12" layer="51"/>
+<wire x1="1.05" y1="0.675" x2="1.05" y2="-0.675" width="0.12" layer="51"/>
+<smd name="1" x="-0.9954" y="0" dx="0.8384" dy="1.3791" layer="1"/>
+<smd name="2" x="0.9954" y="0" dx="0.8384" dy="1.3791" layer="1"/>
+<text x="0" y="1.2" size="0.5" layer="25" font="vector" ratio="10" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.2" size="0.5" layer="27" font="vector" ratio="10" align="top-center">&gt;VALUE</text>
+<wire x1="-1.8" y1="-1" x2="1.8" y2="-1" width="0.127" layer="39"/>
+<wire x1="1.8" y1="-1" x2="1.8" y2="1" width="0.127" layer="39"/>
+<wire x1="1.8" y1="1" x2="-1.8" y2="1" width="0.127" layer="39"/>
+<wire x1="-1.8" y1="1" x2="-1.8" y2="-1" width="0.127" layer="39"/>
 </package>
 </packages>
+<packages3d>
+<package3d name="RESISTOR-PTH-0207/7" urn="urn:adsk.eagle:package:2749854/2" type="model">
+<packageinstances>
+<packageinstance name="RESISTOR-PTH-0207/7"/>
+</packageinstances>
+</package3d>
+<package3d name="RESISTOR_SMD-805" urn="urn:adsk.eagle:package:2749855/3" locally_modified="yes" type="model">
+<description>Resistor, Chip; 2.00 mm L X 1.25 mm W X 0.60 mm H body&lt;p&gt;&lt;i&gt;PCB Libraries Packages&lt;/i&gt;</description>
+<packageinstances>
+<packageinstance name="RESISTOR_SMD-805"/>
+</packageinstances>
+</package3d>
+<package3d name="RESC1005X35" urn="urn:adsk.eagle:package:2899165/1" locally_modified="yes" type="model">
+<description>CHIP, 1 X 0.5 X 0.35 mm body
+&lt;p&gt;CHIP package with body size 1 X 0.5 X 0.35 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="RESC1005X35_SMD-0402"/>
+</packageinstances>
+</package3d>
+<package3d name="RESC1608X65" urn="urn:adsk.eagle:package:2959474/1" locally_modified="yes" type="model">
+<description>CHIP, 1.6 X 0.8 X 0.65 mm body
+&lt;p&gt;CHIP package with body size 1.6 X 0.8 X 0.65 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="RESC1608X65_SMD-0603"/>
+</packageinstances>
+</package3d>
+<package3d name="RESC2012X60" urn="urn:adsk.eagle:package:3034995/1" locally_modified="yes" type="model">
+<description>CHIP, 2 X 1.25 X 0.6 mm body
+&lt;p&gt;CHIP package with body size 2 X 1.25 X 0.6 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="RESC2012X60_SMD-0805"/>
+</packageinstances>
+</package3d>
+</packages3d>
 <symbols>
 <symbol name="RESISTOR">
 <description>Resistor</description>
@@ -687,8 +799,8 @@
 <wire x1="1.016" y1="-1.016" x2="1.651" y2="1.016" width="0.2032" layer="94"/>
 <wire x1="1.651" y1="1.016" x2="2.286" y2="-1.016" width="0.2032" layer="94"/>
 <wire x1="2.286" y1="-1.016" x2="2.54" y2="0" width="0.2032" layer="94"/>
-<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
-<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas"/>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -702,6 +814,9 @@
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2749854/2"/>
+</package3dinstances>
 <technologies>
 <technology name="">
 <attribute name="DATASHEET" value="http://www.yageo.com/documents/recent/Yageo%20LR_CFR_2013.pdf" constant="no"/>
@@ -714,40 +829,63 @@
 </technology>
 </technologies>
 </device>
-<device name="_SMD-0805_1/8W-5%" package="RESISTOR_SMD-805">
+<device name="_SMD-0402_1/16W-5%" package="RESC1005X35_SMD-0402">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2899165/1"/>
+</package3dinstances>
 <technologies>
 <technology name="">
-<attribute name="CREATOR" value="Kenmei" constant="no"/>
-<attribute name="DATASHEET" value="http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_7.pdf" constant="no"/>
+<attribute name="DATASHEET" value="http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_9.pdf" constant="no"/>
 <attribute name="DIST" value="Digikey" constant="no"/>
-<attribute name="DISTLINK" value="https://www.digikey.com/product-detail/en/yageo/RC0805JR-071KL/311-1.0KARCT-ND/731165" constant="no"/>
-<attribute name="DISTPN" value="311-1.0KARCT-ND " constant="no"/>
+<attribute name="DISTLINK" value="https://www.digikey.com/products/en?keywords=311-1.00KLRCT-ND" constant="no"/>
+<attribute name="DISTPN" value="311-1.00KLRCT-ND" constant="no"/>
 <attribute name="MFR" value="Yageo" constant="no"/>
-<attribute name="MPN" value="RC0805JR-071KL " constant="no"/>
-<attribute name="TESTED" value="NO" constant="no"/>
-<attribute name="VALUE" value="1KΩ" constant="no"/>
+<attribute name="MPN" value="RC0402FR-071KL" constant="no"/>
+<attribute name="VALUE" value="1K" constant="no"/>
 </technology>
 </technologies>
 </device>
-<device name="_SMD-0603_1/10W-5%" package="RESISTOR_SMD-603">
+<device name="_SMD-0603_1/10W-5%" package="RESC1608X65_SMD-0603">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2959474/1"/>
+</package3dinstances>
 <technologies>
 <technology name="">
-<attribute name="CREATOR" value="MrSwirlyEyes" constant="no"/>
-<attribute name="DATASHEET" value="http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_8.pdf" constant="no"/>
-<attribute name="DIST" value="Digkey" constant="no"/>
-<attribute name="DISTLINK" value="https://www.digikey.com/products/en?keywords=311-1.0KGRCT-ND" constant="no"/>
-<attribute name="DISTPN" value="311-1.0KGRCT-ND" constant="no"/>
+<attribute name="DATASHEET" value="http://www.yageo.com/NewPortal/yageodocoutput?fileName=/pdf/R-Chip/PYu-AC_51_RoHS_L_6.pdf" constant="no"/>
+<attribute name="DIST" value="Digikey" constant="no"/>
+<attribute name="DISTLINK" value="https://www.digikey.com/products/en?keywords=YAG3646CT-ND" constant="no"/>
+<attribute name="DISTPN" value="YAG3646CT-ND" constant="no"/>
 <attribute name="MFR" value="Yageo" constant="no"/>
-<attribute name="MPN" value="RC0603JR-071KL" constant="no"/>
-<attribute name="VALUE" value="1KΩ" constant="no"/>
+<attribute name="MPN" value="AC0603JR-071KL" constant="no"/>
+<attribute name="VALUE" value="1K" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="_SMD-0805_1/8W-5%" package="RESC2012X60_SMD-0805">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:3034995/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="DATASHEET" value="http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_9.pdf" constant="no"/>
+<attribute name="DIST" value="Digikey" constant="no"/>
+<attribute name="DISTLINK" value="https://www.digikey.com/products/en?keywords=311-1.0KARCT-ND" constant="no"/>
+<attribute name="DISTPN" value="311-1.0KARCT-ND" constant="no"/>
+<attribute name="MFR" value="Yageo" constant="no"/>
+<attribute name="MPN" value="RC0805JR-071KL" constant="no"/>
+<attribute name="VALUE" value="1K" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -763,6 +901,9 @@
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2749854/2"/>
+</package3dinstances>
 <technologies>
 <technology name="">
 <attribute name="DATASHEET" value="http://www.yageo.com/documents/recent/Yageo%20LR_CFR_2013.pdf" constant="no"/>
@@ -780,6 +921,9 @@
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2749855/3"/>
+</package3dinstances>
 <technologies>
 <technology name="">
 <attribute name="CREATOR" value="MrSwirlyEyes" constant="no"/>
@@ -790,6 +934,26 @@
 <attribute name="MFR" value="Yageo" constant="no"/>
 <attribute name="MPN" value="RC0805JR-072KL" constant="no"/>
 <attribute name="VALUE" value="2KΩ" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="_SMD-0402_1/16W-5%" package="RESC1005X35_SMD-0402">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2899165/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="DATASHEET" value="http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_9.pdf" constant="no"/>
+<attribute name="DIST" value="Digikey" constant="no"/>
+<attribute name="DISTLINK" value="https://www.digikey.com/products/en?keywords=311-2.0KJRCT-ND" constant="no"/>
+<attribute name="DISTPN" value="311-2.0KJRCT-ND" constant="no"/>
+<attribute name="MFR" value="Yageo" constant="no"/>
+<attribute name="MPN" value="RC0402JR-072KL" constant="no"/>
+<attribute name="VALUE" value="2K" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -813,8 +977,8 @@
 <part name="SUPPLY2" library="PiB_power_symbols" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="PiB_power_symbols" deviceset="3.3V" device=""/>
 <part name="SUPPLY4" library="PiB_power_symbols" deviceset="3.3V" device=""/>
-<part name="R1" library="PiB_resistors" deviceset="1KΩ" device="_PTH-0207/7_1/4W-5%" value="1K"/>
-<part name="R2" library="PiB_resistors" deviceset="2KΩ" device="_PTH-0207/7_1/4W-5%" value="2K"/>
+<part name="R1" library="PiB_resistors" deviceset="1KΩ" device="_PTH-0207/7_1/4W-5%" package3d_urn="urn:adsk.eagle:package:2749854/2" value="1K"/>
+<part name="R2" library="PiB_resistors" deviceset="2KΩ" device="_PTH-0207/7_1/4W-5%" package3d_urn="urn:adsk.eagle:package:2749854/2" value="2K"/>
 <part name="SUPPLY5" library="PiB_power_symbols" deviceset="GND" device=""/>
 </parts>
 <sheets>
@@ -830,7 +994,7 @@
 <instance part="SUPPLY4" gate="3.3V" x="25.4" y="71.12"/>
 <instance part="R1" gate="G$1" x="83.82" y="60.96" rot="R90"/>
 <instance part="R2" gate="G$1" x="83.82" y="45.72" rot="R90"/>
-<instance part="SUPPLY5" gate="GND" x="83.82" y="38.1"/>
+<instance part="SUPPLY5" gate="GND" x="83.82" y="35.56"/>
 </instances>
 <busses>
 </busses>
@@ -846,27 +1010,14 @@
 <wire x1="83.82" y1="55.88" x2="83.82" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="ARDUINO1" gate="G$1" pin="D2"/>
-<wire x1="68.58" y1="35.56" x2="66.04" y2="35.56" width="0.1524" layer="91"/>
-<label x="68.58" y="35.56" size="1.27" layer="95" ratio="10" xref="yes"/>
+<pinref part="ARDUINO1" gate="G$1" pin="~D3"/>
+<wire x1="68.58" y1="38.1" x2="66.04" y2="38.1" width="0.1524" layer="91"/>
+<label x="68.58" y="38.1" size="1.27" layer="95" ratio="10" xref="yes"/>
 </segment>
-<segment>
-<pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="83.82" y1="66.04" x2="83.82" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="68.58" x2="88.9" y2="68.58" width="0.1524" layer="91"/>
-<label x="88.9" y="68.58" size="1.27" layer="95" ratio="10" xref="yes"/>
-</segment>
-</net>
-<net name="TX" class="0">
 <segment>
 <pinref part="BT1" gate="G$1" pin="TX"/>
 <wire x1="99.06" y1="55.88" x2="93.98" y2="55.88" width="0.1524" layer="91"/>
 <label x="93.98" y="55.88" size="1.27" layer="95" ratio="10" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="ARDUINO1" gate="G$1" pin="~D3"/>
-<wire x1="68.58" y1="38.1" x2="66.04" y2="38.1" width="0.1524" layer="91"/>
-<label x="68.58" y="38.1" size="1.27" layer="95" ratio="10" xref="yes"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -885,6 +1036,7 @@
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
 <pinref part="SUPPLY5" gate="GND" pin="GND"/>
+<wire x1="83.82" y1="38.1" x2="83.82" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="3.3V" class="0">
@@ -901,9 +1053,34 @@
 <pinref part="SUPPLY4" gate="3.3V" pin="3.3V"/>
 </segment>
 </net>
+<net name="TX" class="0">
+<segment>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="83.82" y1="66.04" x2="83.82" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="68.58" x2="88.9" y2="68.58" width="0.1524" layer="91"/>
+<label x="88.9" y="68.58" size="1.27" layer="95" ratio="10" xref="yes"/>
+</segment>
+<segment>
+<pinref part="ARDUINO1" gate="G$1" pin="D2"/>
+<wire x1="68.58" y1="35.56" x2="66.04" y2="35.56" width="0.1524" layer="91"/>
+<label x="68.58" y="35.56" size="1.27" layer="95" ratio="10" xref="yes"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports URNs for individual library
+assets (packages, symbols, and devices). The URNs of those assets
+will not be understood (or retained) with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports the association of 3D packages
+with devices in libraries, schematics, and board files. Those 3D
+packages will not be understood (or retained) with this version.
+</note>
+</compatibility>
 </eagle>

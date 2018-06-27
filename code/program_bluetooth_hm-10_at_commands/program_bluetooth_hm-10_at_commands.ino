@@ -2,13 +2,13 @@
 // Uses serial monitor for communication with Bluetooth HM-10
 //
 //  Pins
-//  Arduino pin 2 (RX) to HM-10 TX
-//  Arduino pin 3 to voltage divider then to HM-10 RX
+//  Arduino pin 2 (TX) to voltage divider then to HM-10 RX
+//  Arduino pin 3 to HM-10 TX
 //  Connect GND from the Arduiono to GND on the HM-10
 //
 // When a command is entered in to the serial monitor on the computer 
-// the Arduino will relay it to the HM-10
-//
+// the Arduino will relay the command to the HM-10
+
 
 // Library to make a Software UART
 #include <SoftwareSerial.h>
