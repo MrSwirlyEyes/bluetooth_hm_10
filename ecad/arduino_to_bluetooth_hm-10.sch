@@ -971,8 +971,8 @@
 </class>
 </classes>
 <parts>
-<part name="ARDUINO1" library="PiB_boards" deviceset="ARDUINO_UNO_R3" device="" value="Arduino UNO R3"/>
-<part name="BT1" library="PiB_radio_frequency" deviceset="BLUETOOTH_HM-10" device="1X06-RA-FEMALE" value="BT HM-10"/>
+<part name="ARDUINO" library="PiB_boards" deviceset="ARDUINO_UNO_R3" device="" value="Arduino UNO R3"/>
+<part name="BT" library="PiB_radio_frequency" deviceset="BLUETOOTH_HM-10" device="1X06-RA-FEMALE" value="BT HM-10"/>
 <part name="SUPPLY1" library="PiB_power_symbols" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="PiB_power_symbols" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="PiB_power_symbols" deviceset="3.3V" device=""/>
@@ -986,8 +986,8 @@
 <plain>
 </plain>
 <instances>
-<instance part="ARDUINO1" gate="G$1" x="48.26" y="50.8"/>
-<instance part="BT1" gate="G$1" x="109.22" y="53.34" rot="MR0"/>
+<instance part="ARDUINO" gate="G$1" x="48.26" y="50.8"/>
+<instance part="BT" gate="G$1" x="109.22" y="53.34" rot="MR0"/>
 <instance part="SUPPLY1" gate="GND" x="25.4" y="55.88"/>
 <instance part="SUPPLY2" gate="GND" x="96.52" y="40.64"/>
 <instance part="SUPPLY3" gate="3.3V" x="96.52" y="60.96"/>
@@ -1001,7 +1001,7 @@
 <nets>
 <net name="RX" class="0">
 <segment>
-<pinref part="BT1" gate="G$1" pin="RX"/>
+<pinref part="BT" gate="G$1" pin="RX"/>
 <wire x1="99.06" y1="53.34" x2="83.82" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="83.82" y1="50.8" x2="83.82" y2="53.34" width="0.1524" layer="91"/>
@@ -1010,25 +1010,25 @@
 <wire x1="83.82" y1="55.88" x2="83.82" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="ARDUINO1" gate="G$1" pin="~D3"/>
+<pinref part="ARDUINO" gate="G$1" pin="~D3"/>
 <wire x1="68.58" y1="38.1" x2="66.04" y2="38.1" width="0.1524" layer="91"/>
 <label x="68.58" y="38.1" size="1.27" layer="95" ratio="10" xref="yes"/>
 </segment>
 <segment>
-<pinref part="BT1" gate="G$1" pin="TX"/>
+<pinref part="BT" gate="G$1" pin="TX"/>
 <wire x1="99.06" y1="55.88" x2="93.98" y2="55.88" width="0.1524" layer="91"/>
 <label x="93.98" y="55.88" size="1.27" layer="95" ratio="10" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="ARDUINO1" gate="G$1" pin="GND@1"/>
+<pinref part="ARDUINO" gate="G$1" pin="GND@1"/>
 <wire x1="30.48" y1="60.96" x2="25.4" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="60.96" x2="25.4" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="SUPPLY1" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="BT1" gate="G$1" pin="GND"/>
+<pinref part="BT" gate="G$1" pin="GND"/>
 <wire x1="99.06" y1="45.72" x2="96.52" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="45.72" x2="96.52" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="SUPPLY2" gate="GND" pin="GND"/>
@@ -1041,13 +1041,13 @@
 </net>
 <net name="3.3V" class="0">
 <segment>
-<pinref part="BT1" gate="G$1" pin="VCC"/>
+<pinref part="BT" gate="G$1" pin="VCC"/>
 <wire x1="99.06" y1="58.42" x2="96.52" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="58.42" x2="96.52" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="SUPPLY3" gate="3.3V" pin="3.3V"/>
 </segment>
 <segment>
-<pinref part="ARDUINO1" gate="G$1" pin="3.3V"/>
+<pinref part="ARDUINO" gate="G$1" pin="3.3V"/>
 <wire x1="30.48" y1="68.58" x2="25.4" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="68.58" x2="25.4" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="SUPPLY4" gate="3.3V" pin="3.3V"/>
@@ -1061,7 +1061,7 @@
 <label x="88.9" y="68.58" size="1.27" layer="95" ratio="10" xref="yes"/>
 </segment>
 <segment>
-<pinref part="ARDUINO1" gate="G$1" pin="D2"/>
+<pinref part="ARDUINO" gate="G$1" pin="D2"/>
 <wire x1="68.58" y1="35.56" x2="66.04" y2="35.56" width="0.1524" layer="91"/>
 <label x="68.58" y="35.56" size="1.27" layer="95" ratio="10" xref="yes"/>
 </segment>
