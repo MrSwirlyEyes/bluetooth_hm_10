@@ -11,7 +11,7 @@
 
 
 // Library to make a Software UART
-#include <SoftwareSerial>;
+#include <SoftwareSerial.h>
 
 #define RX 3
 #define TX 2
@@ -42,5 +42,6 @@ void loop() {
     // Write the received bluetooth data to the Serial Monitor
     Serial.println(c);
   }
+  Serial.println();
   delay(1000);
 }

@@ -1,7 +1,7 @@
 // Basic serial communication with Bluetooth HM-10
 // Uses serial monitor for communication with Bluetooth HM-10
 //
-//  Pins
+//  Arduino to HM-10 connections
 //  Arduino pin 2 (TX) to voltage divider then to HM-10 RX
 //  Arduino pin 3 to HM-10 TX
 //  Connect GND from the Arduiono to GND on the HM-10
@@ -16,6 +16,8 @@
 #define RX 3
 #define TX 2
 
+#define BAUDRATE 9600
+
 char c = ' ';
 boolean new_line = true;
 
@@ -23,21 +25,26 @@ boolean new_line = true;
 SoftwareSerial BTSerial(RX, TX); // (RX, TX)
 
 void setup() {  
-  Serial.begin(9600);
+
+  // Start Serial Monitor for feedback
+  Serial.begin(BAUDRATE);
   
   // HM-10 default speed in AT command mode
-  BTSerial.begin(9600);
+  BTSerial.begin(BAUDRATE);
   
   Serial.println("Enter AT commands:");
 }
 
 void loop() {
+  
   // Keep reading from HM-10 and send to Arduino Serial Monitor
   if (BTSerial.available())
     Serial.write(BTSerial.read());
 
   // Keep reading from Arduino Serial Monitor and send to HM-10
-  if (Serial.available()) { 
+  if (Serial.available()) {
+
+    // Read from the Serial buffer (from the user input)
     c = Serial.read();
 
     // Do not send newline ('\n') nor carriage return ('\r') characters
@@ -49,7 +56,8 @@ void loop() {
       Serial.print("\r\n>");
       new_line = false;
     }
-    
+
+    // Write to the Serial Monitor the bluetooth's response
     Serial.write(c);
     
     // If a newline ('\n') is read, toggle

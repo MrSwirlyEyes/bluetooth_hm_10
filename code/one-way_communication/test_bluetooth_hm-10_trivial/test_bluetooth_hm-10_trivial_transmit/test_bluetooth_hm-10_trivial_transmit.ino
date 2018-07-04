@@ -11,14 +11,16 @@
 
 
 // Library to make a Software UART
-#include <SoftwareSerial>;
+#include <SoftwareSerial.h>
 
 #define RX 3
 #define TX 2
-
-#define BAUDRATE 9600
  
 SoftwareSerial BTSerial(RX, TX); // (RX, TX)
+
+#define BAUDRATE 9600
+
+String message = "Hello World";
  
 void setup() {
 
@@ -31,10 +33,10 @@ void setup() {
  
 void loop() {
   // Send a string for the bluetooth module to transmit
-  BTSerial.print("Hello");
+  BTSerial.print(message);
 
   // Print the same string to the Serial Monitor for feedback
-  Serial.print("Hello");
+  Serial.println(message);
   
   delay(1000);
 }
