@@ -1,4 +1,4 @@
-// Basic serial communication with Bluetooth HM-10
+// Serial communication with Bluetooth HM-10
 // Uses serial monitor for communication with Bluetooth HM-10
 //
 //  Arduino to HM-10 connections
