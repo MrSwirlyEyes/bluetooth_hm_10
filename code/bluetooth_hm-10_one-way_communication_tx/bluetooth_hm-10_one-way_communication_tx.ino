@@ -1,13 +1,8 @@
-// Basic serial communication with Bluetooth HM-10
-// Transmit a trivial string through the Bluetooth HM-10
+// Custom one-way communication with Bluetooth HM-10
+// Transmitting data in the form of a struct to receiver
 //
-//  Arduino to HM-10 connections
-//  Arduino pin 2 (TX) to voltage divider then to HM-10 RX
-//  Arduino pin 3 to HM-10 TX
-//  Connect GND from the Arduiono to GND on the HM-10
-//
-// When a command is entered in to the serial monitor on the computer 
-// the Arduino will relay the command to the HM-10
+// Writes (hardcoded) data to the software UART 
+//  and prints the transmitted packet
 
 
 // Library to make a Software UART
@@ -20,43 +15,62 @@ SoftwareSerial BTSerial(RX, TX); // (RX, TX)
 
 #define BAUDRATE 9600
 
+// Struct to hold the data we want to transmit
 struct Data {
   int a;
   int b;
   int c;
-  byte signature;
-} data;
+  
+  // Checksum to minimize errors
+  byte checksum;
+} data; // Instantiate a Data struct
 
+// Union to allow porting between different computer architectures
 union Packet {
   Data data;
   byte pkt_size[sizeof(Data)];
-} pkt;
+} pkt; // Instantiate a Packet union
  
 void setup() {
   // Start Serial Monitor for feedback
   Serial.begin(BAUDRATE);
 
-  // HM-10 default speed in AT command mode
+  // HM-10 virtual UART
   BTSerial.begin(BAUDRATE);
 
-  pkt.data.signature = 0xDEAD;
+  pkt.data.checksum = 0xDEAD;
 }
  
 void loop() {  
+  // Transmit data via bluetooth
   bluetooth_transmit();
+
+  // Print packet (debug)
+  print_packet();
+
+  // Necessary forced delay, if we transmit too fast
+  //  the error rate will increase sharply
   delay(20);
 }
 
+
+// Function responsible for transmitting data over bluetooth
 void bluetooth_transmit() {
+  // Update data to be transmitted
   pkt.data.a = 1;
   pkt.data.b = 2;
   pkt.data.c = 3;
 
+  // Write packet data to the bluetooth - and transmit
   BTSerial.write((byte *) & pkt,sizeof(Packet));  
+}
 
+// Function to print packet data (debug)
+void print_packet() {
   // Print the same string to the Serial Monitor for feedback
   Serial.print("TX: (a,b,c)=(");
   Serial.print(pkt.data.a); Serial.print(",");
   Serial.print(pkt.data.b); Serial.print(",");
-  Serial.print(pkt.data.c); Serial.println(")");
+  Serial.print(pkt.data.c); 
+  Serial.println(")");
 }
