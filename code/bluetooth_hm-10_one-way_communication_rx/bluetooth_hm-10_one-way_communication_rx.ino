@@ -18,10 +18,11 @@ SoftwareSerial BTSerial(RX, TX); // (RX, TX)
 struct Data {
   int a;
   int b;
-  int c;
+  float c;
+  int d;
   
-  // Checksum to minimize errors
-  byte checksum;
+  // signature to minimize errors
+  byte signature;
 } data; // Instantiate a Data struct
 
 // Union to allow porting between different computer architectures
@@ -30,7 +31,7 @@ union Packet {
   byte pkt_size[sizeof(Data)];
 } pkt; // Instantiate a Packet union
 
-byte checksum = 0xDEAD;
+byte signature = 0xDEAD;
  
 void setup() {
   // Start Serial Monitor for feedback
@@ -46,7 +47,7 @@ void loop() {
 
   // Necessary forced delay, if we transmit too fast
   //  the error rate will increase sharply
-  delay(20);
+  delay(25);
 }
 
 // Function responsible for receiving data over bluetooth
@@ -59,12 +60,12 @@ void bluetooth_receive() {
     for (int i = 0; i < sizeof(Packet); i++) {
       pkt.pkt_size[i] = BTSerial.read();
     }
-  }
-
+  }  
+  
   // Error checking
-  //  If: checksum matches, print packet
-  //  Else: checksum does not match, printe error & flush buffer
-  if(pkt.data.checksum == checksum) {
+  //  If: signature matches, print packet
+  //  Else: signature does not match, printe error & flush buffer
+  if(pkt.data.signature == signature) {
     // Print packet (debug)
     print_packet();
   } else {
@@ -80,6 +81,7 @@ void print_packet() {
   Serial.print("(a,b,c)=(");
   Serial.print(pkt.data.a); Serial.print(",");
   Serial.print(pkt.data.b); Serial.print(",");
-  Serial.print(pkt.data.c); 
+  Serial.print(pkt.data.c); Serial.print(",");
+  Serial.print(pkt.data.d); 
   Serial.println(")");
 }

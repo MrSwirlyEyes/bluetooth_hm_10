@@ -19,10 +19,11 @@ SoftwareSerial BTSerial(RX, TX); // (RX, TX)
 struct Data {
   int a;
   int b;
-  int c;
+  float c;
+  int d;
   
-  // Checksum to minimize errors
-  byte checksum;
+  // signature to minimize errors
+  byte signature;
 } data; // Instantiate a Data struct
 
 // Union to allow porting between different computer architectures
@@ -36,9 +37,7 @@ void setup() {
   Serial.begin(BAUDRATE);
 
   // HM-10 virtual UART
-  BTSerial.begin(BAUDRATE);
-
-  pkt.data.checksum = 0xDEAD;
+  BTSerial.begin(BAUDRATE);  
 }
  
 void loop() {  
@@ -51,16 +50,19 @@ void loop() {
   // Necessary forced delay, if we transmit too fast
   //  the error rate will increase sharply
   delay(20);
+
+  pkt.data.signature = 0xDEAD;
 }
 
 
 // Function responsible for transmitting data over bluetooth
 void bluetooth_transmit() {
   // Update data to be transmitted
-  pkt.data.a = 1;
-  pkt.data.b = 2;
-  pkt.data.c = 3;
-
+  pkt.data.a = 0;
+  pkt.data.b = 255;
+  pkt.data.c = 888.888;
+  pkt.data.d = -100;
+  
   // Write packet data to the bluetooth - and transmit
   BTSerial.write((byte *) & pkt,sizeof(Packet));  
 }
