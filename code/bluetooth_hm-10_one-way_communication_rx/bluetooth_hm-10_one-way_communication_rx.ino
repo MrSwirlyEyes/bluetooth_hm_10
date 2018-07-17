@@ -15,7 +15,7 @@
 SoftwareSerial BTSerial(RX, TX); // (RX, TX)
 
 // Struct to hold the data we want to transmit
-struct Data {
+struct Packet {
   int a;
   int b;
   float c;
@@ -23,13 +23,7 @@ struct Data {
   
   // signature to minimize errors
   byte signature;
-} data; // Instantiate a Data struct
-
-// Union to allow porting between different computer architectures
-union Packet {
-  Data data;
-  byte pkt_size[sizeof(Data)];
-} pkt; // Instantiate a Packet union
+} pkt; // Instantiate a Packet struct
 
 byte signature = 0xDEAD;
  
@@ -45,7 +39,7 @@ void loop() {
   // Receive data from the bluetooth
   bluetooth_receive();  
 
-  // Necessary forced delay, if we transmit too fast
+  // Necessary forced delay, if we receive too fast
   //  the error rate will increase sharply
   delay(25);
 }
@@ -56,16 +50,14 @@ void bluetooth_receive() {
   // Keep reading from HM-10 and send to Arduino Serial Monitor  
   // Check the software serial buffer for data to read
   if(BTSerial.available() > 0) {
-    // Read in the appropriate number of bytes to fit out Packet
-    for (int i = 0; i < sizeof(Packet); i++) {
-      pkt.pkt_size[i] = BTSerial.read();
-    }
+    // Read in the appropriate number of bytes to fit our Packet
+    BTSerial.readBytes((byte *) & pkt,sizeof(Packet));
   }  
   
   // Error checking
   //  If: signature matches, print packet
   //  Else: signature does not match, printe error & flush buffer
-  if(pkt.data.signature == signature) {
+  if(pkt.signature == signature) {
     // Print packet (debug)
     print_packet();
   } else {
@@ -79,9 +71,9 @@ void bluetooth_receive() {
 // Function to print packet data (debug)
 void print_packet() {
   Serial.print("(a,b,c)=(");
-  Serial.print(pkt.data.a); Serial.print(",");
-  Serial.print(pkt.data.b); Serial.print(",");
-  Serial.print(pkt.data.c); Serial.print(",");
-  Serial.print(pkt.data.d); 
+  Serial.print(pkt.a); Serial.print(",");
+  Serial.print(pkt.b); Serial.print(",");
+  Serial.print(pkt.c); Serial.print(",");
+  Serial.print(pkt.d); 
   Serial.println(")");
 }

@@ -16,7 +16,7 @@ SoftwareSerial BTSerial(RX, TX); // (RX, TX)
 #define BAUDRATE 9600
 
 // Struct to hold the data we want to transmit
-struct Data {
+struct Packet {
   int a;
   int b;
   float c;
@@ -24,13 +24,7 @@ struct Data {
   
   // signature to minimize errors
   byte signature;
-} data; // Instantiate a Data struct
-
-// Union to allow porting between different computer architectures
-union Packet {
-  Data data;
-  byte pkt_size[sizeof(Data)];
-} pkt; // Instantiate a Packet union
+} pkt; // Instantiate a Packet struct
  
 void setup() {
   // Start Serial Monitor for feedback
@@ -51,17 +45,17 @@ void loop() {
   //  the error rate will increase sharply
   delay(20);
 
-  pkt.data.signature = 0xDEAD;
+  pkt.signature = 0xDEAD;
 }
 
 
 // Function responsible for transmitting data over bluetooth
 void bluetooth_transmit() {
   // Update data to be transmitted
-  pkt.data.a = 0;
-  pkt.data.b = 255;
-  pkt.data.c = 888.888;
-  pkt.data.d = -100;
+  pkt.a = 0;
+  pkt.b = 255;
+  pkt.c = 888.888;
+  pkt.d = -100;
   
   // Write packet data to the bluetooth - and transmit
   BTSerial.write((byte *) & pkt,sizeof(Packet));  
@@ -71,8 +65,8 @@ void bluetooth_transmit() {
 void print_packet() {
   // Print the same string to the Serial Monitor for feedback
   Serial.print("TX: (a,b,c)=(");
-  Serial.print(pkt.data.a); Serial.print(",");
-  Serial.print(pkt.data.b); Serial.print(",");
-  Serial.print(pkt.data.c); 
+  Serial.print(pkt.a); Serial.print(",");
+  Serial.print(pkt.b); Serial.print(",");
+  Serial.print(pkt.c); 
   Serial.println(")");
 }
