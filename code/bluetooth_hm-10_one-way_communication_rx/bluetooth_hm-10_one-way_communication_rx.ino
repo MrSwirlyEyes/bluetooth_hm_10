@@ -36,13 +36,13 @@ void loop() {
 
   // Necessary forced delay, if we receive too fast
   //  the error rate will increase sharply
-  delay(25);
+  delay(1);
 }
 
 // Function responsible for receiving data over bluetooth
 void bluetooth_receive() {
   // Check the software serial buffer for data to read
-  if(BTSerial.available() > 0) {
+  if(BTSerial.available() >= sizeof(Packet)) {
     // Read in the appropriate number of bytes to fit our Packet
     BTSerial.readBytes((byte *) & pkt,sizeof(Packet));
     

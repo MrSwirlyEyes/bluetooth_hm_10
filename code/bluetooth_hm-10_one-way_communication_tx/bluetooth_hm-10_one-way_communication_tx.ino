@@ -35,9 +35,9 @@ void loop() {
   // Transmit data via bluetooth
   bluetooth_transmit();  
 
-  // Necessary forced delay, if we transmit too fast
-  //  the error rate will increase sharply
-  delay(20);
+  // Necessary forced delay, if we transmit too fast (no delay)
+  //  the error rate increases
+  delay(1);
 }
 
 // Function responsible for transmitting data over bluetooth
