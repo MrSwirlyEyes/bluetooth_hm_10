@@ -16,16 +16,16 @@ SoftwareSerial BTSerial(RX, TX); // (RX, TX)
 
 // Struct to hold the data we want to transmit
 struct Packet {
-  int a;
+  byte a;
   int b;
   float c;
   int d;
   
   // signature to minimize errors
-  byte signature;
+//  byte signature;
 } pkt; // Instantiate a Packet struct
 
-byte signature = 0xDEAD;
+//byte signature = 0xDEAD;
  
 void setup() {
   // Start Serial Monitor for feedback
@@ -52,28 +52,30 @@ void bluetooth_receive() {
   if(BTSerial.available() > 0) {
     // Read in the appropriate number of bytes to fit our Packet
     BTSerial.readBytes((byte *) & pkt,sizeof(Packet));
+    print_packet();
+    BTSerial.flush();
   }  
   
   // Error checking
   //  If: signature matches, print packet
   //  Else: signature does not match, printe error & flush buffer
-  if(pkt.signature == signature) {
+//  if(pkt.signature == signature) {
     // Print packet (debug)
-    print_packet();
-  } else {
-    Serial.println("ERROR");
+//    print_packet();
+//  } else {
+//    Serial.println("ERROR");
 
     // Flush the software serial buffer (refresh for new data)
-    BTSerial.flush();
-  }  
+//    BTSerial.flush();
+//  }  
 }
 
 // Function to print packet data (debug)
 void print_packet() {
-  Serial.print("(a,b,c)=(");
+  Serial.print("RX: (a,b,c)=(");
   Serial.print(pkt.a); Serial.print(",");
   Serial.print(pkt.b); Serial.print(",");
   Serial.print(pkt.c); Serial.print(",");
-  Serial.print(pkt.d); 
+  Serial.print(pkt.d);
   Serial.println(")");
 }

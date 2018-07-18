@@ -17,13 +17,13 @@ SoftwareSerial BTSerial(RX, TX); // (RX, TX)
 
 // Struct to hold the data we want to transmit
 struct Packet {
-  int a;
+  byte a;
   int b;
   float c;
   int d;
   
   // signature to minimize errors
-  byte signature;
+//  byte signature;
 } pkt; // Instantiate a Packet struct
  
 void setup() {
@@ -45,7 +45,7 @@ void loop() {
   //  the error rate will increase sharply
   delay(20);
 
-  pkt.signature = 0xDEAD;
+//  pkt.signature = 0xDEAD;
 }
 
 
@@ -67,6 +67,7 @@ void print_packet() {
   Serial.print("TX: (a,b,c)=(");
   Serial.print(pkt.a); Serial.print(",");
   Serial.print(pkt.b); Serial.print(",");
-  Serial.print(pkt.c); 
+  Serial.print(pkt.c); Serial.print(",");  
+  Serial.print(pkt.d);
   Serial.println(")");
 }
