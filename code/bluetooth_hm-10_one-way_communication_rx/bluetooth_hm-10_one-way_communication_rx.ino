@@ -34,8 +34,8 @@ void loop() {
   // Receive data from the bluetooth
   bluetooth_receive();  
 
-  // Necessary forced delay, if we receive too fast
-  //  the error rate will increase sharply
+  // Necessary forced delay, if we receive too fast (no delay)
+  //  the error rate increases
   delay(1);
 }
 
