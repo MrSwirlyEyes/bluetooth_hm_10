@@ -20,12 +20,7 @@ struct Packet {
   int b;
   float c;
   int d;
-  
-  // signature to minimize errors
-//  byte signature;
 } pkt; // Instantiate a Packet struct
-
-//byte signature = 0xDEAD;
  
 void setup() {
   // Start Serial Monitor for feedback
@@ -46,28 +41,17 @@ void loop() {
 
 // Function responsible for receiving data over bluetooth
 void bluetooth_receive() {
-   // (software serial buffer)
-  // Keep reading from HM-10 and send to Arduino Serial Monitor  
   // Check the software serial buffer for data to read
   if(BTSerial.available() > 0) {
     // Read in the appropriate number of bytes to fit our Packet
     BTSerial.readBytes((byte *) & pkt,sizeof(Packet));
-    print_packet();
-    BTSerial.flush();
-  }  
-  
-  // Error checking
-  //  If: signature matches, print packet
-  //  Else: signature does not match, printe error & flush buffer
-//  if(pkt.signature == signature) {
+    
     // Print packet (debug)
-//    print_packet();
-//  } else {
-//    Serial.println("ERROR");
+    print_packet();
 
     // Flush the software serial buffer (refresh for new data)
-//    BTSerial.flush();
-//  }  
+    BTSerial.flush();
+  }   
 }
 
 // Function to print packet data (debug)

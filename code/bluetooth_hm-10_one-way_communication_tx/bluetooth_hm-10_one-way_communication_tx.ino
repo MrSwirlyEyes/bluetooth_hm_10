@@ -20,10 +20,7 @@ struct Packet {
   byte a;
   int b;
   float c;
-  int d;
-  
-  // signature to minimize errors
-//  byte signature;
+  int d; 
 } pkt; // Instantiate a Packet struct
  
 void setup() {
@@ -36,18 +33,12 @@ void setup() {
  
 void loop() {  
   // Transmit data via bluetooth
-  bluetooth_transmit();
-
-  // Print packet (debug)
-  print_packet();
+  bluetooth_transmit();  
 
   // Necessary forced delay, if we transmit too fast
   //  the error rate will increase sharply
   delay(20);
-
-//  pkt.signature = 0xDEAD;
 }
-
 
 // Function responsible for transmitting data over bluetooth
 void bluetooth_transmit() {
@@ -55,10 +46,13 @@ void bluetooth_transmit() {
   pkt.a = 0;
   pkt.b = 255;
   pkt.c = 888.888;
-  pkt.d = -100;
+  pkt.d = -100;  
   
   // Write packet data to the bluetooth - and transmit
-  BTSerial.write((byte *) & pkt,sizeof(Packet));  
+  BTSerial.write((byte *) & pkt,sizeof(Packet));
+
+  // Print packet (debug)
+  print_packet();
 }
 
 // Function to print packet data (debug)
