@@ -1,13 +1,8 @@
-// Basic serial communication with Bluetooth HM-10
-// Receive a trivial string through the Bluetooth HM-10
+// Custom two-way communication with Bluetooth HM-10
+// Transmitting & receiving data in the form of a struct
 //
-//  Arduino to HM-10 connections
-//  Arduino pin 2 (TX) to voltage divider then to HM-10 RX
-//  Arduino pin 3 to HM-10 TX
-//  Connect GND from the Arduiono to GND on the HM-10
-//
-// When a command is entered in to the serial monitor on the computer 
-// the Arduino will relay the command to the HM-10
+// Writes and reads (hardcoded) data to the software UART 
+//  and prints the transmitted & received packet
 
 
 // Library to make a Software UART
@@ -18,14 +13,13 @@
  
 SoftwareSerial BTSerial(RX, TX); // (RX, TX)
 
+// Struct to hold the data we want to transmit/receive
 struct Packet {
   byte a;
   int b;
   float c;
   int d;
 } pkt_tx, pkt_rx;
-
-//byte count = 10;
 
 #define BAUDRATE 9600
  

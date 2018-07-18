@@ -14,7 +14,7 @@
  
 SoftwareSerial BTSerial(RX, TX); // (RX, TX)
 
-// Struct to hold the data we want to transmit
+// Struct to hold the data we want to receive
 struct Packet {
   byte a;
   int b;
@@ -52,8 +52,7 @@ void bluetooth_receive() {
 }
 
 // Function to print packet data (debug)
-void print_packet() {
-  // Print the Packet contents
+void print_packet() {  
   Serial.print("RX: (a,b,c,d)=(");
   Serial.print(pkt.a); Serial.print(",");
   Serial.print(pkt.b); Serial.print(",");
