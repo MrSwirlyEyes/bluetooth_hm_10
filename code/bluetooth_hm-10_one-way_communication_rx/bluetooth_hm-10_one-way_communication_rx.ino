@@ -48,15 +48,13 @@ void bluetooth_receive() {
     
     // Print packet (debug)
     print_packet();
-
-    // Flush the software serial buffer (refresh for new data)
-    BTSerial.flush();
   }   
 }
 
 // Function to print packet data (debug)
 void print_packet() {
-  Serial.print("RX: (a,b,c)=(");
+  // Print the Packet contents
+  Serial.print("RX: (a,b,c,d)=(");
   Serial.print(pkt.a); Serial.print(",");
   Serial.print(pkt.b); Serial.print(",");
   Serial.print(pkt.c); Serial.print(",");

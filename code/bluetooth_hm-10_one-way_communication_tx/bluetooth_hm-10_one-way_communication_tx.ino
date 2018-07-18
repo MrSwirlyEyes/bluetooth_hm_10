@@ -20,7 +20,7 @@ struct Packet {
   byte a;
   int b;
   float c;
-  int d; 
+  int d;
 } pkt; // Instantiate a Packet struct
  
 void setup() {
@@ -46,7 +46,7 @@ void bluetooth_transmit() {
   pkt.a = 0;
   pkt.b = 255;
   pkt.c = 888.888;
-  pkt.d = -100;  
+  pkt.d = -100;
   
   // Write packet data to the bluetooth - and transmit
   BTSerial.write((byte *) & pkt,sizeof(Packet));
@@ -56,9 +56,8 @@ void bluetooth_transmit() {
 }
 
 // Function to print packet data (debug)
-void print_packet() {
-  // Print the same string to the Serial Monitor for feedback
-  Serial.print("TX: (a,b,c)=(");
+void print_packet() {  
+  Serial.print("TX: (a,b,c,d)=(");
   Serial.print(pkt.a); Serial.print(",");
   Serial.print(pkt.b); Serial.print(",");
   Serial.print(pkt.c); Serial.print(",");  
