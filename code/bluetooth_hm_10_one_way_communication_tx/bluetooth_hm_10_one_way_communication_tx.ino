@@ -8,8 +8,8 @@
 // Library to make a Software UART
 #include <SoftwareSerial.h>
 
-#define RX 3
 #define TX 2
+#define RX 3
  
 SoftwareSerial BTSerial(RX, TX); // (RX, TX)
 
